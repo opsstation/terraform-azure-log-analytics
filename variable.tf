@@ -143,5 +143,3 @@ variable "eventhub_authorization_rule_id" {
   default     = null
   description = "Specifies the ID of an Event Hub Namespace Authorization Rule used to send Diagnostics Data."
 }
-
-

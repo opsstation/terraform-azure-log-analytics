@@ -45,13 +45,16 @@ Replace **MIT** and **OpsStation** with the appropriate license and your informa
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.6.6 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >=3.87.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | n/a |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | >=3.87.0 |
 
 ## Modules
 
@@ -76,7 +79,6 @@ No requirements.
 | <a name="input_daily_quota_gb"></a> [daily\_quota\_gb](#input\_daily\_quota\_gb) | The workspace daily quota for ingestion in GB. Defaults to -1 (unlimited) if omitted. | `string` | `"-1"` | no |
 | <a name="input_days"></a> [days](#input\_days) | The number of days for which this Retention Policy should apply. | `number` | `"90"` | no |
 | <a name="input_diagnostic_setting_enable"></a> [diagnostic\_setting\_enable](#input\_diagnostic\_setting\_enable) | n/a | `bool` | `true` | no |
-| <a name="input_email_receiver"></a> [email\_receiver](#input\_email\_receiver) | One or more email\_receiver blocks as defined below. | `list(any)` | `[]` | no |
 | <a name="input_enabled"></a> [enabled](#input\_enabled) | Set to false to prevent the module from creating any resources. | `bool` | `true` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment (e.g. `prod`, `dev`, `staging`). | `string` | `""` | no |
 | <a name="input_eventhub_authorization_rule_id"></a> [eventhub\_authorization\_rule\_id](#input\_eventhub\_authorization\_rule\_id) | Specifies the ID of an Event Hub Namespace Authorization Rule used to send Diagnostics Data. | `string` | `null` | no |
@@ -87,7 +89,6 @@ No requirements.
 | <a name="input_log_analytics_destination_type"></a> [log\_analytics\_destination\_type](#input\_log\_analytics\_destination\_type) | Possible values are AzureDiagnostics and Dedicated, default to AzureDiagnostics. When set to Dedicated, logs sent to a Log Analytics workspace will go into resource specific tables, instead of the legacy AzureDiagnostics table. | `string` | `"AzureDiagnostics"` | no |
 | <a name="input_log_analytics_workspace_id"></a> [log\_analytics\_workspace\_id](#input\_log\_analytics\_workspace\_id) | n/a | `string` | `null` | no |
 | <a name="input_log_analytics_workspace_location"></a> [log\_analytics\_workspace\_location](#input\_log\_analytics\_workspace\_location) | Location of the Workspace | `string` | `"West Us"` | no |
-| <a name="input_log_analytics_workspace_name"></a> [log\_analytics\_workspace\_name](#input\_log\_analytics\_workspace\_name) | Name of the Log Analytics Workspace | `string` | `"loganalytics"` | no |
 | <a name="input_log_analytics_workspace_sku"></a> [log\_analytics\_workspace\_sku](#input\_log\_analytics\_workspace\_sku) | pecifies the Sku of the Log Analytics Workspace. Possible values are Free, PerNode, Premium, Standard, Standalone, Unlimited, CapacityReservation, and PerGB2018 (new Sku as of 2018-04-03). Defaults to PerGB2018 | `string` | `"PerGB2018"` | no |
 | <a name="input_log_enabled"></a> [log\_enabled](#input\_log\_enabled) | Is this Diagnostic Log enabled? Defaults to true. | `string` | `true` | no |
 | <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'opsstation'. | `string` | `"git::git@github.com:opsstation/terraform-azure-labels.git"` | no |
@@ -97,9 +98,7 @@ No requirements.
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | Resource group of deployment | `string` | `""` | no |
 | <a name="input_retention_in_days"></a> [retention\_in\_days](#input\_retention\_in\_days) | The workspace data retention in days. Possible values are either 7 (Free Tier only) or range between 30 and 730. | `number` | `null` | no |
 | <a name="input_retention_policy_enabled"></a> [retention\_policy\_enabled](#input\_retention\_policy\_enabled) | Is this Retention Policy enabled? | `bool` | `false` | no |
-| <a name="input_scheduled_query_rules_alert"></a> [scheduled\_query\_rules\_alert](#input\_scheduled\_query\_rules\_alert) | Manages an AlertingAction Scheduled Query Rules resource within Azure Monitor. | `any` | `{}` | no |
 | <a name="input_storage_account_id"></a> [storage\_account\_id](#input\_storage\_account\_id) | The ID of the Storage Account where logs should be sent. | `string` | `null` | no |
-| <a name="input_tags"></a> [tags](#input\_tags) | A map of tags to add to all resources | `map(string)` | `{}` | no |
 
 ## Outputs
 
