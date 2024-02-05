@@ -37,18 +37,6 @@ variable "enabled" {
   description = "Set to false to prevent the module from creating any resources."
 }
 
-
-variable "tags" {
-  type        = map(string)
-  default     = {}
-  description = "A map of tags to add to all resources"
-}
-variable "log_analytics_workspace_name" {
-  type        = string
-  default     = "loganalytics"
-  description = "Name of the Log Analytics Workspace"
-}
-
 variable "log_analytics_workspace_location" {
   type        = string
   default     = "West Us"
@@ -67,20 +55,6 @@ variable "log_analytics_workspace_sku" {
   description = "pecifies the Sku of the Log Analytics Workspace. Possible values are Free, PerNode, Premium, Standard, Standalone, Unlimited, CapacityReservation, and PerGB2018 (new Sku as of 2018-04-03). Defaults to PerGB2018"
 
 }
-
-
-variable "email_receiver" {
-  type        = list(any)
-  default     = []
-  description = "One or more email_receiver blocks as defined below."
-}
-
-variable "scheduled_query_rules_alert" {
-  type        = any
-  default     = {}
-  description = "Manages an AlertingAction Scheduled Query Rules resource within Azure Monitor."
-}
-
 variable "create_log_analytics_workspace" {
   type        = bool
   default     = true
