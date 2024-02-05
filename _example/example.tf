@@ -3,7 +3,7 @@ provider "azurerm" {
 }
 
 module "resource_group" {
-  source  = "git::git@github.com:opsstation/terraform-azure-resource-group.git"
+  source = "git::git@github.com:opsstation/terraform-azure-resource-group.git"
 
   name        = "app-log-analy"
   environment = "test"

@@ -153,6 +153,12 @@ variable "storage_account_id" {
   default     = null
   description = "The ID of the Storage Account where logs should be sent."
 }
+
+variable "partner_solution_id" {
+  type        = string
+  default     = null
+  description = "The ID of the Storage Account where logs should be sent."
+}
 variable "eventhub_name" {
   type        = string
   default     = null

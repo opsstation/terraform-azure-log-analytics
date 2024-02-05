@@ -1,7 +1,7 @@
 
 
 module "labels" {
-  source      = "git::git@github.com:opsstation/terraform-azure-labels.git"
+  source      = "git::https://github.com/opsstation/terraform-azure-labels.git?ref=v1.0.0"
   name        = var.name
   environment = var.environment
   managedby   = var.managedby
@@ -26,6 +26,7 @@ resource "azurerm_monitor_diagnostic_setting" "test" {
   name                           = format("%s-log-analytics-diagnostic-log", module.labels.id)
   target_resource_id             = join("", azurerm_log_analytics_workspace.main.*.id)
   storage_account_id             = var.storage_account_id
+  partner_solution_id            = var.partner_solution_id
   eventhub_name                  = var.eventhub_name
   eventhub_authorization_rule_id = var.eventhub_authorization_rule_id
   log_analytics_workspace_id     = var.log_analytics_workspace_id
